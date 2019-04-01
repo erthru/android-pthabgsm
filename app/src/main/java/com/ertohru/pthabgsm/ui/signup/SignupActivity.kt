@@ -3,11 +3,11 @@ package com.ertohru.pthabgsm.ui.signup
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.ertohru.pthabgsm.R
 import com.ertohru.pthabgsm.api.Client
 import com.ertohru.pthabgsm.api.Support
 import com.ertohru.pthabgsm.api.response.RegistrasiResponse
-import com.ertohru.pthabgsm.base.BaseActivity
 import com.ertohru.pthabgsm.ui.login.LoginActivity
 import com.ertohru.pthabgsm.utils.Loading
 import es.dmoral.toasty.Toasty
@@ -15,11 +15,13 @@ import kotlinx.android.synthetic.main.activity_signup.*
 import retrofit2.Call
 import retrofit2.Response
 
-class SignupActivity : BaseActivity() {
+class SignupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+
+        supportActionBar?.hide()
 
         btnMasukSignup.setOnClickListener { startActivity(Intent(this,LoginActivity::class.java)) }
         btnSignup.setOnClickListener { signUp() }

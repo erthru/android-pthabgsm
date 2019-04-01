@@ -3,10 +3,10 @@ package com.ertohru.pthabgsm.ui.main
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import com.ertohru.pthabgsm.R
-import com.ertohru.pthabgsm.base.BaseActivity
 import com.ertohru.pthabgsm.ui.servis.ServisFragment
 import com.ertohru.pthabgsm.ui.history.HistoryFragment
 import com.ertohru.pthabgsm.ui.home.HomeFragment
@@ -15,11 +15,13 @@ import com.ertohru.pthabgsm.ui.profile.ProfileFragment
 import com.ertohru.pthabgsm.utils.sharedpref.SessionUser
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar?.hide()
 
         setUpBottomNavigation()
 

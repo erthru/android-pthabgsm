@@ -29,7 +29,7 @@
                 <TextView
                         android:text="Data Pesanan"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/textView5" android:textStyle="bold"
+                        android:layout_height="wrap_content" android:id="@+id/textView" android:textStyle="bold"
                         android:textSize="18sp" android:textColor="@color/md_divider_dark_theme"
                         android:layout_marginRight="2dp" android:layout_marginLeft="2dp"
                 />
@@ -37,7 +37,38 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" android:layout_marginBottom="2dp"
                         android:layout_marginLeft="7dp" android:layout_marginRight="7dp"
-                        android:layout_marginTop="8dp">
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:layout_marginTop="8dp" android:id="@+id/btnBuatPesananHome">
+                    <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:padding="16dp">
+
+                        <ImageView
+                                android:src="@drawable/img_new"
+                                android:layout_width="38dp"
+                                android:layout_height="38dp" android:scaleType="fitXY"
+                                android:layout_gravity="center_vertical"/>
+                        <TextView
+                                android:text="Buat Pesanan Baru"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="50dp" android:textSize="16sp" android:textStyle="bold"
+                                android:layout_gravity="center_vertical"/>
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+                <TextView
+                        android:text="Riwayat Servis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView5" android:textStyle="bold"
+                        android:textSize="18sp" android:textColor="@color/md_divider_dark_theme"
+                        android:layout_marginRight="2dp" android:layout_marginLeft="2dp"
+                        android:layout_marginTop="24dp"/>
+                <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="7dp" android:layout_marginRight="7dp"
+                        android:layout_marginTop="10dp">
                     <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" android:padding="16dp">

@@ -6,12 +6,11 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import com.ertohru.pthabgsm.R
-import com.ertohru.pthabgsm.base.BaseActivity
 import com.ertohru.pthabgsm.ui.login.LoginActivity
 import com.ertohru.pthabgsm.ui.main.MainActivity
 import com.ertohru.pthabgsm.utils.sharedpref.SessionUser
 
-class SplashActivity : BaseActivity() {
+class SplashActivity : AppCompatActivity() {
 
     var delay:Long = 2000
 
@@ -20,6 +19,8 @@ class SplashActivity : BaseActivity() {
         setContentView(R.layout.activity_splash)
 
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
+        supportActionBar?.hide()
 
         Handler().postDelayed({
 

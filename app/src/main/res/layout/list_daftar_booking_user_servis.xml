@@ -6,9 +6,10 @@
 
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
+            android:foreground="?attr/selectableItemBackground"
             android:layout_height="wrap_content" android:layout_marginRight="12dp" android:layout_marginLeft="12dp"
             android:layout_marginTop="12dp" android:layout_marginBottom="2dp" android:clickable="true"
-    >
+            android:id="@+id/layoutLDBUS">
         <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:paddingRight="14dp" android:paddingTop="14dp"
@@ -27,7 +28,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                     <TextView
-                            android:text="Pesanan Id : #0"
+                            android:text="No. Invoice : #0"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:id="@+id/tvBookingIdLDBUS"
                             android:textStyle="bold" android:layout_weight="1"/>

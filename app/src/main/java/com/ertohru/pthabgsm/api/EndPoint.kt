@@ -1,9 +1,6 @@
 package com.ertohru.pthabgsm.api
 
-import com.ertohru.pthabgsm.api.response.DaftarBookingUserResponse
-import com.ertohru.pthabgsm.api.response.LoginResponse
-import com.ertohru.pthabgsm.api.response.RegistrasiResponse
-import com.ertohru.pthabgsm.api.response.ReportUserResponse
+import com.ertohru.pthabgsm.api.response.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -36,5 +33,14 @@ interface EndPoint{
         @Query("user_id") userId:Int,
         @Query("page") page:Int
     ) : Call<DaftarBookingUserResponse>
+
+    @FormUrlEncoded
+    @POST("app.php?mod=start_booking")
+    fun startBooking(
+        @Field("user_id")userId:Int,
+        @Field("dealer_id")dealerId:Int,
+        @Field("booking_jenis_servis")jenisServis:String,
+        @Field("booking_keterangan")keterangan:String
+    ) : Call<StartBookingResponse>
 
 }

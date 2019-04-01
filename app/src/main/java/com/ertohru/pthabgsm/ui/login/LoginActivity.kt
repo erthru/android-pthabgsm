@@ -8,7 +8,6 @@ import com.ertohru.pthabgsm.R
 import com.ertohru.pthabgsm.api.Client
 import com.ertohru.pthabgsm.api.Support
 import com.ertohru.pthabgsm.api.response.LoginResponse
-import com.ertohru.pthabgsm.base.BaseActivity
 import com.ertohru.pthabgsm.ui.main.MainActivity
 import com.ertohru.pthabgsm.ui.signup.SignupActivity
 import com.ertohru.pthabgsm.utils.Loading
@@ -19,11 +18,13 @@ import kotlinx.android.synthetic.main.activity_signup.*
 import retrofit2.Call
 import retrofit2.Response
 
-class LoginActivity : BaseActivity() {
+class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        supportActionBar?.hide()
 
         btnDaftarLogin.setOnClickListener { startActivity(Intent(this,SignupActivity::class.java)) }
         btnLogin.setOnClickListener { auth() }
