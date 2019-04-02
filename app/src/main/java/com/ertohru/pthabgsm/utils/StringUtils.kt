@@ -1,5 +1,9 @@
 package com.ertohru.pthabgsm.utils
 
+import android.R.attr.digits
+import android.util.Log
+
+
 class StringUtils {
 
     companion object {
@@ -27,6 +31,30 @@ class StringUtils {
             month["12"]="Des"
 
             return date.substring(8,10)+" "+month.get(date.substring(5,7))+" "+date.substring(0,4)+" | "+date.substring(10)
+
+        }
+
+        fun rupiah(rp:String) : String{
+
+            var result = ""
+            var counter = 0
+            for (i in rp.length - 1 downTo 0) {
+                val ch = rp.get(i)
+                result = ch + result
+                counter++
+                if (counter % 3 === 0) {
+                    result = ",$result"
+                }
+            }
+
+            Log.d("RUPIAH_FIRST_CHAR",result.substring(0,1))
+
+            if(result.substring(0,1) == ",") {
+                return result.replaceFirst(",", "")
+            }else{
+                return result
+            }
+
 
         }
 

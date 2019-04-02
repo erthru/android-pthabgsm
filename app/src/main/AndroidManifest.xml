@@ -13,6 +13,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ui.viewservispart.ViewServisPartActivity">
+        </activity>
         <activity android:name=".ui.pesanandetail.PesananDetailActivity">
         </activity>
         <activity android:name=".ui.newpesanan.NewPesananActivity">

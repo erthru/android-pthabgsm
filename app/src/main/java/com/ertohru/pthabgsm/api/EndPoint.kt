@@ -43,4 +43,14 @@ interface EndPoint{
         @Field("booking_keterangan")keterangan:String
     ) : Call<StartBookingResponse>
 
+    @GET("app.php?mod=daftar_booking_status")
+    fun daftarBookingStatus(
+        @Query("booking_id") bookingId:Int
+    ) : Call<DaftarBookingStatusResponse>
+
+    @GET("app.php?mod=daftar_booking_item")
+    fun daftarBookingItem(
+        @Query("booking_id") bookingId:Int
+    ) : Call<DaftarBookingItemResponse>
+
 }
