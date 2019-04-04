@@ -15,6 +15,9 @@ import com.ertohru.pthabgsm.R
 import com.ertohru.pthabgsm.api.Client
 import com.ertohru.pthabgsm.api.Support
 import com.ertohru.pthabgsm.api.response.DaftarBookingItemResponse
+import com.ertohru.pthabgsm.api.response.MenungguPersetujuanBookingResponse
+import com.ertohru.pthabgsm.ui.main.MainActivity
+import com.ertohru.pthabgsm.utils.Loading
 import com.ertohru.pthabgsm.utils.StringUtils
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_view_servis_part.*
@@ -79,7 +82,7 @@ class ViewServisPartActivity : AppCompatActivity() {
 
         btnSetVSP.setOnClickListener {
 
-
+            setItem()
 
         }
 
@@ -114,6 +117,54 @@ class ViewServisPartActivity : AppCompatActivity() {
                         val adapter = ViewServisPartRecyclerView(applicationContext,response.body()?.booking_item)
                         adapter.notifyDataSetChanged()
                         rvVSP.adapter = adapter
+
+                    }
+
+                }
+
+            })
+
+    }
+
+    private fun setItem(){
+
+        val loading = Loading(this)
+        loading.show("Proses...")
+
+        var unselectedItem = ""
+
+        if(UNSELECTED_ITEM.size > 0){
+            for(i in 0 until UNSELECTED_ITEM.size){
+                unselectedItem += UNSELECTED_ITEM.get(i)+","
+            }
+        }
+
+        Client().prepare(Support.API_PTHABGSM).menungguPersetujuanBooking(bookingId!!,unselectedItem)
+            .enqueue(object : retrofit2.Callback<MenungguPersetujuanBookingResponse>{
+                override fun onFailure(call: Call<MenungguPersetujuanBookingResponse>, t: Throwable) {
+                    Log.d("ONFAILURE",t.toString())
+                    loading.dismiss()
+                    Toasty.error(applicationContext,"Koneksi internet gagal.",Toasty.LENGTH_SHORT).show()
+                }
+
+                override fun onResponse(
+                    call: Call<MenungguPersetujuanBookingResponse>,
+                    response: Response<MenungguPersetujuanBookingResponse>
+                ) {
+
+                    if(response.isSuccessful){
+
+                        loading.dismiss()
+
+                        if(!response.body()?.error!!){
+
+                            Toasty.success(applicationContext,response.body()?.pesan!!,Toasty.LENGTH_SHORT).show()
+                            finish()
+                            startActivity(Intent(applicationContext,MainActivity::class.java))
+
+                        }else{
+                            Toasty.error(applicationContext,response.body()?.pesan!!,Toasty.LENGTH_SHORT).show()
+                        }
 
                     }
 

@@ -53,4 +53,11 @@ interface EndPoint{
         @Query("booking_id") bookingId:Int
     ) : Call<DaftarBookingItemResponse>
 
+    @FormUrlEncoded
+    @POST("app.php?mod=menunggu_persetujuan_booking")
+    fun menungguPersetujuanBooking(
+        @Field("booking_id")bookingId:Int,
+        @Field("unselected_booking_item_id")unselectedBookingItemId:String?
+    ) : Call<MenungguPersetujuanBookingResponse>
+
 }
