@@ -8,10 +8,10 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import com.ertohru.pthabgsm.R
 import com.ertohru.pthabgsm.ui.servis.ServisFragment
-import com.ertohru.pthabgsm.ui.history.HistoryFragment
 import com.ertohru.pthabgsm.ui.home.HomeFragment
 import com.ertohru.pthabgsm.ui.login.LoginActivity
 import com.ertohru.pthabgsm.ui.profile.ProfileFragment
+import com.ertohru.pthabgsm.ui.riwayat.RiwayatFragment
 import com.ertohru.pthabgsm.utils.sharedpref.SessionUser
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
                     0 -> fm.beginTransaction().replace(R.id.flMain, HomeFragment()).commit()
                     1 -> fm.beginTransaction().replace(R.id.flMain, ServisFragment()).commit()
-                    2 -> fm.beginTransaction().replace(R.id.flMain, HistoryFragment()).commit()
+                    2 -> fm.beginTransaction().replace(R.id.flMain, RiwayatFragment()).commit()
                     3 -> fm.beginTransaction().replace(R.id.flMain, ProfileFragment()).commit()
 
                 }

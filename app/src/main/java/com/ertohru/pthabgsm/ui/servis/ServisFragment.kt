@@ -62,7 +62,7 @@ class ServisFragment : Fragment() {
                     && newState == RecyclerView.SCROLL_STATE_IDLE
                     && directiorDown) {
 
-                    if(!allData && dataListServis.size >= 10)
+                    if(!allData && dataListServis.size >= 10*page)
                         loadDataNext()
 
                 }
@@ -103,7 +103,7 @@ class ServisFragment : Fragment() {
                     if(response.isSuccessful){
 
                         if(response.body()?.data_booking_user?.size == 0)
-                            tvKosongServis.visibility = View.VISIBLE
+                            v.tvKosongServis.visibility = View.VISIBLE
 
                         v.pbServis.visibility = View.GONE
 

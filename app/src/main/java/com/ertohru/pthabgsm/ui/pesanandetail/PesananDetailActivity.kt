@@ -72,6 +72,11 @@ class PesananDetailActivity : AppCompatActivity() {
         }else if(lastStatus == "DALAM PENGERJAAN"){
             tvKeteranganDetailPD.text = "* Pesanan servis anda dalam tahap pengerjaan."
             btnViewPartPD.visibility = View.VISIBLE
+        }else if(lastStatus == "SELESAI"){
+            tvKeteranganDetailPD.text = "* Pesanan servis anda telah selesai. silahkan ambil kembali mobil anda di "+i.getStringExtra("dealer_alamat")+"Dengan membayar sejumlah total yang telah ditentukan. tap tombol di bawah untuk melihat detail."
+            btnViewPartPD.visibility = View.VISIBLE
+        }else if(lastStatus == "DITOLAK") {
+            tvKeteranganDetailPD.text = "* Pesanan servis anda ditolak. Cek menu bantuan untuk alasan penolakan"
         }
 
         btnViewPartPD.setOnClickListener {
