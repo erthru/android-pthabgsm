@@ -2,6 +2,7 @@ package com.ertohru.pthabgsm.ui.riwayat
 
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
@@ -9,7 +10,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.afollestad.materialdialogs.MaterialDialog
@@ -18,24 +18,17 @@ import com.afollestad.materialdialogs.customview.customView
 import com.ertohru.pthabgsm.R
 import com.ertohru.pthabgsm.api.Client
 import com.ertohru.pthabgsm.api.Support
-import com.ertohru.pthabgsm.api.model.DataBookingUserDaftarBookingUserResponse
 import com.ertohru.pthabgsm.api.model.RiwayatBookingUseRiwayatBookingUserResponse
-import com.ertohru.pthabgsm.api.response.DaftarBookingUserResponse
 import com.ertohru.pthabgsm.api.response.RiwayatBookingUserResponse
-import com.ertohru.pthabgsm.ui.servis.ServisRecyclerViewAdapter
+import com.ertohru.pthabgsm.ui.riwayatdatefilter.RiwayatDateFilterActivity
 import com.ertohru.pthabgsm.utils.sharedpref.SessionUser
 import es.dmoral.toasty.Toasty
-import kotlinx.android.synthetic.main.dialog_date_filter_riwayat.*
 import kotlinx.android.synthetic.main.dialog_date_filter_riwayat.view.*
-import kotlinx.android.synthetic.main.fragment_riwayat.*
 import kotlinx.android.synthetic.main.fragment_riwayat.view.*
-import kotlinx.android.synthetic.main.fragment_servis.*
-import kotlinx.android.synthetic.main.fragment_servis.view.*
 import retrofit2.Call
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.zip.Inflater
 
 class RiwayatFragment : Fragment() {
 
@@ -223,6 +216,25 @@ class RiwayatFragment : Fragment() {
             }
 
             DatePickerDialog(context,date,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show()
+
+        }
+
+        dview.btnCariDDFR.setOnClickListener {
+
+            if(dview.btnSet1DDFR.text.toString() == "PILIH TGL AWAL" || dview.btnSet2DDFR.text.toString() == "PILIH TGL AKHIR"){
+                Toasty.error(context!!,"Tanggal belum dipilih.",Toasty.LENGTH_SHORT).show()
+            }else{
+
+                val dateB = SimpleDateFormat("yyyy-MM-dd").format(SimpleDateFormat("dd-MM-yyyy").parse(dview.btnSet1DDFR.text.toString()))
+                val dateA = SimpleDateFormat("yyyy-MM-dd").format(SimpleDateFormat("dd-MM-yyyy").parse(dview.btnSet2DDFR.text.toString()))
+
+                val intent = Intent(context,RiwayatDateFilterActivity::class.java)
+                intent.putExtra("dateB",dateB)
+                intent.putExtra("dateA",dateA)
+
+                startActivity(intent)
+
+            }
 
         }
 
