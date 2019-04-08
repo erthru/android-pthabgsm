@@ -66,4 +66,18 @@ interface EndPoint{
         @Field("unselected_booking_item_id")unselectedBookingItemId:String?
     ) : Call<MenungguPersetujuanBookingResponse>
 
+    @GET("app.php?mod=user_detail")
+    fun userDetail(
+        @Query("user_id")userId: Int
+    ) : Call<UserDetailResponse>
+
+    @FormUrlEncoded
+    @POST("app.php?mod=update_profile")
+    fun updateProfile(
+        @Field("user_id")userId: Int,
+        @Field("user_nama_lengkap")userNamaLengkap: String,
+        @Field("user_alamat")userAlamat: String,
+        @Field("user_no_hp")userNoHp:String
+    ) : Call<UpdateProfileResponse>
+
 }

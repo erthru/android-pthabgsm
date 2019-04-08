@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:focusableInTouchMode="true"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" android:paddingLeft="24dp" android:paddingRight="24dp">
+
+    <TextView
+            android:text="Perbarui Profil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView15" android:textSize="18sp"
+            android:textStyle="bold"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edNamaDUP" android:hint="Nama Lengkap" android:layout_marginTop="5dp"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:id="@+id/edAlamatDUP" android:hint="Alamat" android:gravity="top"
+            android:inputType="textMultiLine"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edNohpDUP" android:hint="No. Hp"/>
+    <Button
+            android:text="PERBARUI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/btnUpdateDUP" android:layout_marginTop="10dp"
+            android:textColor="@android:color/white" android:textStyle="bold" android:background="@color/successColor"/>
+</LinearLayout>
