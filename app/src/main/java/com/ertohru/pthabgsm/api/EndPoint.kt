@@ -40,6 +40,14 @@ interface EndPoint{
         @Query("page") page:Int
     ) : Call<RiwayatBookingUserResponse>
 
+    @GET("app.php?mod=riwayat_booking_user_date_filter")
+    fun riwayatBookingUserDateFilter(
+        @Query("user_id") userId:Int,
+        @Query("page") page:Int,
+        @Query("date_b") dateB:String,
+        @Query("date_a") dateA:String
+    ) : Call<RiwayatDateFilterBookingUserResponse>
+
     @FormUrlEncoded
     @POST("app.php?mod=start_booking")
     fun startBooking(

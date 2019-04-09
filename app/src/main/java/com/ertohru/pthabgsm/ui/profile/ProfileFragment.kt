@@ -1,6 +1,7 @@
 package com.ertohru.pthabgsm.ui.profile
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -17,6 +18,7 @@ import com.ertohru.pthabgsm.api.Client
 import com.ertohru.pthabgsm.api.Support
 import com.ertohru.pthabgsm.api.response.UpdateProfileResponse
 import com.ertohru.pthabgsm.api.response.UserDetailResponse
+import com.ertohru.pthabgsm.ui.bantuan.BantuanActivity
 import com.ertohru.pthabgsm.utils.Loading
 import com.ertohru.pthabgsm.utils.sharedpref.SessionUser
 import es.dmoral.toasty.Toasty
@@ -59,6 +61,8 @@ class ProfileFragment : Fragment() {
         v.btnLogoutProfile.setOnClickListener {
             logout()
         }
+
+        v.btnBantuanProfile.setOnClickListener { startActivity(Intent(context,BantuanActivity::class.java)) }
 
     }
 
