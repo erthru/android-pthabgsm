@@ -44,6 +44,7 @@ class ServisRecyclerViewAdapter(val context:Context, val data:ArrayList<DataBook
                 i.putExtra("booking_id",entity?.booking_id.toString())
                 i.putExtra("booking_jenis_servis",entity?.booking_jenis_servis)
                 i.putExtra("booking_keterangan",entity?.booking_keterangan)
+                i.putExtra("booking_biaya",entity?.booking_biaya)
                 i.putExtra("booking_created_at",entity?.booking_created_at)
                 i.putExtra("user_id",entity?.user_id)
                 i.putExtra("dealer_id",entity?.dealer_id)

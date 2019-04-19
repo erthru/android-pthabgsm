@@ -27,6 +27,7 @@ import retrofit2.Response
 class ViewServisPartActivity : AppCompatActivity() {
 
     var bookingId:Int? = null
+    var biaya = 0
 
     companion object {
         var ON_SELECTED = false
@@ -72,6 +73,8 @@ class ViewServisPartActivity : AppCompatActivity() {
             btnSetVSP.visibility = View.VISIBLE
             ON_SELECTED = true
         }
+
+        biaya = i.getStringExtra("booking_biaya").toInt()
 
 
         rvVSP.setHasFixedSize(true)
@@ -177,7 +180,10 @@ class ViewServisPartActivity : AppCompatActivity() {
     val bc = object : BroadcastReceiver(){
 
         override fun onReceive(p0: Context?, p1: Intent?) {
-            tvTotalVSP.text = "Total: Rp. "+ StringUtils.rupiah(TOTAL_HARGA.toString())
+
+            val total = TOTAL_HARGA+biaya
+
+            tvTotalVSP.text = "Total: Rp. "+ StringUtils.rupiah(total.toString()) +" (Termasuk biaya servis: Rp. "+StringUtils.rupiah(biaya.toString())+")"
         }
 
     }

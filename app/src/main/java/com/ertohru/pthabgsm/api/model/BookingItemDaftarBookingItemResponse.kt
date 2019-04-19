@@ -6,6 +6,7 @@ data class BookingItemDaftarBookingItemResponse(
     var booking_id:Int?,
     var barang_servis_id:Int?,
     var booking_item_status:String?,
+    var booking_item_cur_harga:Int?,
     var barang_servis_nama:String?,
     var barang_servis_harga:Int?,
     var barang_servis_kategori:String?,

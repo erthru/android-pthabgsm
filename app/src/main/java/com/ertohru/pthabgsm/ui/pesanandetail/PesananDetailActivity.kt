@@ -83,6 +83,7 @@ class PesananDetailActivity : AppCompatActivity() {
 
             val ss = Intent(applicationContext,ViewServisPartActivity::class.java)
             ss.putExtra("booking_id",bookingId!!.toString())
+            ss.putExtra("booking_biaya",i.getStringExtra("booking_biaya"))
 
             if(onSelected)
                 ss.putExtra("onSelected","1")

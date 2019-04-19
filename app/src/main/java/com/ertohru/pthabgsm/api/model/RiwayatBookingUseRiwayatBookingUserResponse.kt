@@ -5,6 +5,7 @@ data class  RiwayatBookingUseRiwayatBookingUserResponse(
     var booking_id:Int?,
     var booking_jenis_servis:String?,
     var booking_keterangan:String?,
+    var booking_biaya:String?,
     var booking_created_at:String?,
     var user_id:Int?,
     var dealer_id:Int?,

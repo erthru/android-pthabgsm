@@ -42,14 +42,14 @@ class ViewServisPartRecyclerView(val context:Context,val data:ArrayList<BookingI
                 v.btnUnselectedLVSP.visibility = View.GONE
 
             v.tvNameLVSP.text = entity.barang_servis_nama
-            v.tvHargaLVSP.text = "Rp. "+StringUtils.rupiah(entity.barang_servis_harga.toString())
+            v.tvHargaLVSP.text = "Rp. "+StringUtils.rupiah(entity.booking_item_cur_harga.toString())
 
             v.layoutLVSP.visibility = View.GONE
 
             if(entity.booking_item_status?.equals("DIPILIH")!!){
                 v.layoutLVSP.visibility = View.VISIBLE
 
-                ViewServisPartActivity.TOTAL_HARGA += entity.barang_servis_harga!!
+                ViewServisPartActivity.TOTAL_HARGA += entity.booking_item_cur_harga!!
                 val bc = Intent()
                 bc.action = "VSP_TOTAL"
                 context.sendBroadcast(bc)
@@ -59,7 +59,7 @@ class ViewServisPartRecyclerView(val context:Context,val data:ArrayList<BookingI
             v.btnUnselectedLVSP.setOnClickListener {
 
                 if(!ViewServisPartActivity.UNSELECTED_ITEM.contains(entity.booking_item_id.toString())){
-                    ViewServisPartActivity.TOTAL_HARGA -= entity.barang_servis_harga!!
+                    ViewServisPartActivity.TOTAL_HARGA -= entity.booking_item_cur_harga!!
                     ViewServisPartActivity.UNSELECTED_ITEM.add(entity.booking_item_id.toString())
 
                     Log.d("UNSELECTED_ITEM",ViewServisPartActivity.UNSELECTED_ITEM.toString())
