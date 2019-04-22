@@ -50,6 +50,10 @@ class PesananDetailActivity : AppCompatActivity() {
 
         tvInvoicePD.text = i.getStringExtra("booking_id")
         tvJenisPD.text = i.getStringExtra("booking_jenis_servis")
+        tvModelKendaraanPD.text = i.getStringExtra("booking_model_kendaraan")
+        tvVincodePD.text = i.getStringExtra("booking_vincode")
+        tvKMPD.text = i.getStringExtra("booking_km")
+        tvNoPolisiPD.text = i.getStringExtra("booking_no_polisi")
         tvKeteranganPD.text = i.getStringExtra("booking_keterangan")
         tvTglPD.text = StringUtils.dateLengkap(i.getStringExtra("booking_created_at"))
         tvNamaPD.text = i.getStringExtra("user_nama_lengkap")

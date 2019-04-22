@@ -54,6 +54,10 @@ interface EndPoint{
         @Field("user_id")userId:Int,
         @Field("dealer_id")dealerId:Int,
         @Field("booking_jenis_servis")jenisServis:String,
+        @Field("booking_model_kendaraan")modelKendaraan:String,
+        @Field("booking_vincode")vincode:String,
+        @Field("booking_km")km:String,
+        @Field("booking_no_polisi")noPolisi:String,
         @Field("booking_keterangan")keterangan:String
     ) : Call<StartBookingResponse>
 

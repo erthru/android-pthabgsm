@@ -4,6 +4,10 @@ data class  RiwayatBookingUseRiwayatBookingUserDateFilterResponse(
 
     var booking_id:Int?,
     var booking_jenis_servis:String?,
+    var booking_model_kendaraan:String?,
+    var booking_vincode:String?,
+    var booking_km:String?,
+    var booking_no_polisi:String?,
     var booking_keterangan:String?,
     var booking_biaya:String?,
     var booking_created_at:String?,
