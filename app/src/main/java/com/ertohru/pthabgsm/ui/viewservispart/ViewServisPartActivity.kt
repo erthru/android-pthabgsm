@@ -163,7 +163,7 @@ class ViewServisPartActivity : AppCompatActivity() {
 
                             Toasty.success(applicationContext,response.body()?.pesan!!,Toasty.LENGTH_SHORT).show()
                             finish()
-                            startActivity(Intent(applicationContext,MainActivity::class.java))
+                            startActivity(Intent(applicationContext,MainActivity::class.java).putExtra("TARGET","SERVIS"))
 
                         }else{
                             Toasty.error(applicationContext,response.body()?.pesan!!,Toasty.LENGTH_SHORT).show()

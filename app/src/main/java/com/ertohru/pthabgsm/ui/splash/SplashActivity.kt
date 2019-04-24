@@ -22,14 +22,43 @@ class SplashActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        handlerHandle()
+
+    }
+
+    private fun handlerHandle(){
+
+        val i = intent
+
+        if(i.hasExtra("A"))
+            delay = 0
+
         Handler().postDelayed({
 
             finish()
-            if(SessionUser(this).isLogin()){
-                startActivity(Intent(this,MainActivity::class.java))
+
+            if(i.hasExtra("BODY")){
+                if(i.getStringExtra("BODY").contains("diterima") || i.getStringExtra("BODY").contains("pengerjaan") || i.getStringExtra("BODY").contains("ditentukan")) {
+
+                    val intent = Intent(this,MainActivity::class.java)
+                    intent.putExtra("TARGET","SERVIS")
+                    startActivity(intent)
+
+                }else if(i.getStringExtra("BODY").contains("selesai")) {
+
+                    val intent = Intent(this,MainActivity::class.java)
+                    intent.putExtra("TARGET","HISTORY")
+                    startActivity(intent)
+
+                }
             }else{
-                startActivity(Intent(this,LoginActivity::class.java))
+                if(SessionUser(this).isLogin()){
+                    startActivity(Intent(this,MainActivity::class.java))
+                }else{
+                    startActivity(Intent(this,LoginActivity::class.java))
+                }
             }
+
 
         },delay)
 

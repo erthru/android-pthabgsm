@@ -11,7 +11,11 @@ import com.ertohru.pthabgsm.api.response.LoginResponse
 import com.ertohru.pthabgsm.ui.main.MainActivity
 import com.ertohru.pthabgsm.ui.signup.SignupActivity
 import com.ertohru.pthabgsm.utils.Loading
+import com.ertohru.pthabgsm.utils.fcm.FCMMessagingService
 import com.ertohru.pthabgsm.utils.sharedpref.SessionUser
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.iid.InstanceIdResult
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_signup.*
@@ -56,6 +60,18 @@ class LoginActivity : AppCompatActivity() {
                         if(!response.body()?.error!!){
 
                             SessionUser(this@LoginActivity).createSession(response.body()?.user?.user_id!!)
+
+                            FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener(this@LoginActivity, object : OnSuccessListener<InstanceIdResult>{
+
+                                override fun onSuccess(p0: InstanceIdResult?) {
+
+                                    Log.d("TOKEN"," "+p0?.token)
+
+                                    FCMMessagingService().saveUserToken(SessionUser(this@LoginActivity).userId().toString(),p0?.token!!)
+                                }
+
+                            })
+
                             finish()
                             startActivity(Intent(applicationContext,MainActivity::class.java))
 

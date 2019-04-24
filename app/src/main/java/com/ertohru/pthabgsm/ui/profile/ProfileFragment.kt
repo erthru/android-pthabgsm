@@ -21,6 +21,7 @@ import com.ertohru.pthabgsm.api.response.UserDetailResponse
 import com.ertohru.pthabgsm.ui.bantuan.BantuanActivity
 import com.ertohru.pthabgsm.ui.login.LoginActivity
 import com.ertohru.pthabgsm.utils.Loading
+import com.ertohru.pthabgsm.utils.fcm.FCMMessagingService
 import com.ertohru.pthabgsm.utils.sharedpref.SessionUser
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.dialog_update_profile.view.*
@@ -170,6 +171,7 @@ class ProfileFragment : Fragment() {
 
     private fun logout(){
 
+        FCMMessagingService().removeUserToken(SessionUser(context!!).userId().toString())
         SessionUser(context!!).clearSession()
         startActivity(Intent(context,LoginActivity::class.java))
 

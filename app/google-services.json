@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "38920017453",
+    "firebase_url": "https://pthabgsm.firebaseio.com",
+    "project_id": "pthabgsm",
+    "storage_bucket": "pthabgsm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38920017453:android:e11fbc4693c84e32",
+        "android_client_info": {
+          "package_name": "com.ertohru.pthabgsm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38920017453-6m75309v22kpip56fcoqjdmjv5rb32hg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4tKU3shaJQ3ScbDFTS8j0oFDqQwueAIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38920017453-6m75309v22kpip56fcoqjdmjv5rb32hg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

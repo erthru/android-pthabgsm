@@ -92,4 +92,17 @@ interface EndPoint{
         @Field("user_no_hp")userNoHp:String
     ) : Call<UpdateProfileResponse>
 
+    @FormUrlEncoded
+    @POST("app.php?mod=save_user_token")
+    fun saveUserToken(
+        @Field("user_id")userId:Int,
+        @Field("token")token:String
+    ) : Call<SaveUserTokenResponse>
+
+    @FormUrlEncoded
+    @POST("app.php?mod=remove_user_token")
+    fun removeUserToken(
+        @Field("user_id")userId:Int
+    ) : Call<RemoveUserTokenResponse>
+
 }

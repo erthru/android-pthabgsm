@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         setUpBottomNavigation()
+        intentNavigation()
 
     }
 
@@ -64,6 +65,19 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+    }
+
+    private fun intentNavigation(){
+        val i = intent
+
+        if(i.hasExtra("TARGET")){
+            if(i.getStringExtra("TARGET") == "SERVIS"){
+                botnavMain.currentItem = 1
+            }else if(i.getStringExtra("TARGET") == "HISTORY"){
+                botnavMain.currentItem = 2
+            }
+        }
 
     }
 
