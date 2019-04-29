@@ -17,7 +17,7 @@ interface EndPoint{
     ) : Call<RegistrasiResponse>
 
     @FormUrlEncoded
-    @POST("app.php?mod=login")
+    @POST("app.php?mod=login_user")
     fun login(
         @Field("login_email") loginEmail:String,
         @Field("login_pass") loginPass:String
