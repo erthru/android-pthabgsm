@@ -7,7 +7,7 @@ import retrofit2.http.*
 interface EndPoint{
 
     @FormUrlEncoded
-    @POST("App.php?mod=registrasi")
+    @POST("app.php?mod=registrasi")
     fun registrasi(
         @Field("login_email") loginEmail:String,
         @Field("user_nama_lengkap") userNamaLengkap:String,
@@ -17,30 +17,30 @@ interface EndPoint{
     ) : Call<RegistrasiResponse>
 
     @FormUrlEncoded
-    @POST("App.php?mod=login_user")
+    @POST("app.php?mod=login_user")
     fun login(
         @Field("login_email") loginEmail:String,
         @Field("login_pass") loginPass:String
     ) : Call<LoginResponse>
 
-    @GET("App.php?mod=report_user")
+    @GET("app.php?mod=report_user")
     fun reportUser(
         @Query("user_id") userId:Int
     ) : Call<ReportUserResponse>
 
-    @GET("App.php?mod=daftar_booking_user")
+    @GET("app.php?mod=daftar_booking_user")
     fun daftarBookingUser(
         @Query("user_id") userId:Int,
         @Query("page") page:Int
     ) : Call<DaftarBookingUserResponse>
 
-    @GET("App.php?mod=riwayat_booking_user")
+    @GET("app.php?mod=riwayat_booking_user")
     fun riwayatBookingUser(
         @Query("user_id") userId:Int,
         @Query("page") page:Int
     ) : Call<RiwayatBookingUserResponse>
 
-    @GET("App.php?mod=riwayat_booking_user_date_filter")
+    @GET("app.php?mod=riwayat_booking_user_date_filter")
     fun riwayatBookingUserDateFilter(
         @Query("user_id") userId:Int,
         @Query("page") page:Int,
@@ -49,7 +49,7 @@ interface EndPoint{
     ) : Call<RiwayatDateFilterBookingUserResponse>
 
     @FormUrlEncoded
-    @POST("App.php?mod=start_booking")
+    @POST("app.php?mod=start_booking")
     fun startBooking(
         @Field("user_id")userId:Int,
         @Field("dealer_id")dealerId:Int,
@@ -61,30 +61,30 @@ interface EndPoint{
         @Field("booking_keterangan")keterangan:String
     ) : Call<StartBookingResponse>
 
-    @GET("App.php?mod=daftar_booking_status")
+    @GET("app.php?mod=daftar_booking_status")
     fun daftarBookingStatus(
         @Query("booking_id") bookingId:Int
     ) : Call<DaftarBookingStatusResponse>
 
-    @GET("App.php?mod=daftar_booking_item")
+    @GET("app.php?mod=daftar_booking_item")
     fun daftarBookingItem(
         @Query("booking_id") bookingId:Int
     ) : Call<DaftarBookingItemResponse>
 
     @FormUrlEncoded
-    @POST("App.php?mod=menunggu_persetujuan_booking")
+    @POST("app.php?mod=menunggu_persetujuan_booking")
     fun menungguPersetujuanBooking(
         @Field("booking_id")bookingId:Int,
         @Field("unselected_booking_item_id")unselectedBookingItemId:String?
     ) : Call<MenungguPersetujuanBookingResponse>
 
-    @GET("App.php?mod=user_detail")
+    @GET("app.php?mod=user_detail")
     fun userDetail(
         @Query("user_id")userId: Int
     ) : Call<UserDetailResponse>
 
     @FormUrlEncoded
-    @POST("App.php?mod=update_profile")
+    @POST("app.php?mod=update_profile")
     fun updateProfile(
         @Field("user_id")userId: Int,
         @Field("user_nama_lengkap")userNamaLengkap: String,
@@ -93,14 +93,14 @@ interface EndPoint{
     ) : Call<UpdateProfileResponse>
 
     @FormUrlEncoded
-    @POST("App.php?mod=save_user_token")
+    @POST("app.php?mod=save_user_token")
     fun saveUserToken(
         @Field("user_id")userId:Int,
         @Field("token")token:String
     ) : Call<SaveUserTokenResponse>
 
     @FormUrlEncoded
-    @POST("App.php?mod=remove_user_token")
+    @POST("app.php?mod=remove_user_token")
     fun removeUserToken(
         @Field("user_id")userId:Int
     ) : Call<RemoveUserTokenResponse>

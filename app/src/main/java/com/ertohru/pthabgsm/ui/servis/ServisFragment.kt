@@ -102,6 +102,8 @@ class ServisFragment : Fragment() {
 
                     if(response.isSuccessful){
 
+                        Log.d("RESPONSE",Support.API_PTHABGSM+" | "+response.body()?.data_booking_user.toString())
+
                         if(response.body()?.data_booking_user?.size == 0)
                             v.tvKosongServis.visibility = View.VISIBLE
 

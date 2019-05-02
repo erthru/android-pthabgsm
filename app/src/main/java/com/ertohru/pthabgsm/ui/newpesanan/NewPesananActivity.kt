@@ -86,7 +86,7 @@ class NewPesananActivity : AppCompatActivity() {
                         loading.dismiss()
                         finish()
                         startActivity(Intent(applicationContext,MainActivity::class.java).putExtra("TARGET","SERVIS"))
-                        Toasty.success(applicationContext,"Pesanan berhasil dibuat.",Toasty.LENGTH_SHORT).show()
+                        Toasty.success(applicationContext,response.body()?.pesan!!,Toasty.LENGTH_SHORT).show()
 
                     }
 
