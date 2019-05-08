@@ -4,7 +4,7 @@ class Support {
 
     companion object {
 
-        const val API_PTHABGSM = "http:/192.168.56.1/anows/api_pthangsm/"
+        const val API_PTHABGSM = "http://192.168.56.1/anows/api_pthabgsm/"
 
     }
 

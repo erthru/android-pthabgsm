@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.WindowManager
 import com.ertohru.pthabgsm.R
+import com.ertohru.pthabgsm.api.Support
 import com.ertohru.pthabgsm.ui.login.LoginActivity
 import com.ertohru.pthabgsm.ui.main.MainActivity
 import com.ertohru.pthabgsm.utils.sharedpref.SessionUser
@@ -21,6 +23,8 @@ class SplashActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         supportActionBar?.hide()
+
+        Log.d("BASE_URL", Support.API_PTHABGSM)
 
         handlerHandle()
 
