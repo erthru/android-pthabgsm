@@ -37,6 +37,7 @@ class ServisRecyclerViewAdapter(val context:Context, val data:ArrayList<DataBook
             v.tvDealerLDBUS.text = entity.dealer_nama
             v.tvJenisLDBUS.text = "Jenis Servis: "+entity.booking_jenis_servis
             v.tvBookingIdLDBUS.text = "No. Invoice: #"+entity.booking_id.toString()
+            v.tvStatusLDBUS.text = entity.last_status?.toLowerCase()
 
             v.layoutLDBUS.setOnClickListener {
 

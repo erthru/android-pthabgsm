@@ -10,49 +10,68 @@
             android:layout_height="wrap_content" android:layout_marginRight="12dp" android:layout_marginLeft="12dp"
             android:layout_marginTop="12dp" android:layout_marginBottom="2dp" android:clickable="true"
             android:id="@+id/layoutLRBUR">
-        <FrameLayout
+        <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:paddingRight="14dp" android:paddingTop="14dp"
-                android:paddingBottom="14dp" android:paddingLeft="6dp">
-
-            <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp" app:srcCompat="@drawable/img_history"
-                    android:id="@+id/imageView5" android:scaleType="fitXY" android:layout_marginLeft="5dp"/>
-            <LinearLayout
-                    android:orientation="vertical"
+                android:layout_height="match_parent">
+            <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:layout_weight="1" android:layout_marginLeft="55dp">
+                    android:layout_height="match_parent" android:paddingRight="14dp" android:paddingTop="14dp"
+                    android:paddingBottom="14dp" android:paddingLeft="6dp">
+
+                <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" app:srcCompat="@drawable/img_history"
+                        android:id="@+id/imageView5" android:scaleType="fitXY" android:layout_marginLeft="5dp"/>
                 <LinearLayout
-                        android:orientation="horizontal"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                    <TextView
-                            android:text="No. Invoice : #0"
+                        android:layout_height="match_parent" android:layout_weight="1" android:layout_marginLeft="55dp">
+                    <LinearLayout
+                            android:orientation="horizontal"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" android:id="@+id/tvBookingIdLRBUR"
-                            android:textStyle="bold" android:layout_weight="1"/>
+                            android:layout_height="match_parent">
+                        <TextView
+                                android:text="No. Invoice : #0"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvBookingIdLRBUR"
+                                android:textStyle="bold" android:layout_weight="1"/>
+                        <TextView
+                                android:text="12/10/19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:id="@+id/tvDateLRBUR"
+                                android:textStyle="bold" android:layout_weight="0" android:textAlignment="textEnd"
+                                android:textSize="10sp"/>
+                    </LinearLayout>
                     <TextView
-                            android:text="12/10/19"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:id="@+id/tvDateLRBUR"
-                            android:textStyle="bold" android:layout_weight="0" android:textAlignment="textEnd"
-                            android:textSize="10sp"/>
+                            android:text="Jenis Servis: BODY"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/tvJenisLRBUR" android:textSize="18sp"
+                            android:layout_marginTop="2dp"/>
+                    <TextView
+                            android:text="Delear Nama"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/tvDealerLRBUR"
+                            android:layout_marginTop="16dp"
+                            android:textAlignment="viewStart" android:textStyle="bold"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="12sp"/>
                 </LinearLayout>
+            </FrameLayout>
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="2dp" android:paddingBottom="2dp" android:paddingRight="16dp"
+                    android:paddingLeft="16dp" android:background="@color/colorError"
+                    android:id="@+id/layoutStatusLRBUR">
+
                 <TextView
-                        android:text="Jenis Servis: BODY"
+                        android:text="ditolak"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/tvJenisLRBUR" android:textSize="18sp"
-                        android:layout_marginTop="2dp"/>
-                <TextView
-                        android:text="Delear Nama"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/tvDealerLRBUR"
-                        android:layout_marginTop="16dp"
-                        android:textAlignment="viewStart" android:textStyle="bold"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="12sp"/>
-            </LinearLayout>
-        </FrameLayout>
+                        android:layout_height="wrap_content" android:id="@+id/tvStatusLRBUR"
+                        android:textSize="14dp"
+                        android:textAlignment="textEnd" android:textColor="@color/colorWhite"/>
+            </FrameLayout>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

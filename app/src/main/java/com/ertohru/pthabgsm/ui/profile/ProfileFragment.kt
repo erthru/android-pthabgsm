@@ -18,7 +18,6 @@ import com.ertohru.pthabgsm.api.Client
 import com.ertohru.pthabgsm.api.Support
 import com.ertohru.pthabgsm.api.response.UpdateProfileResponse
 import com.ertohru.pthabgsm.api.response.UserDetailResponse
-import com.ertohru.pthabgsm.ui.bantuan.BantuanActivity
 import com.ertohru.pthabgsm.ui.login.LoginActivity
 import com.ertohru.pthabgsm.utils.Loading
 import com.ertohru.pthabgsm.utils.fcm.FCMMessagingService
@@ -63,8 +62,6 @@ class ProfileFragment : Fragment() {
         v.btnLogoutProfile.setOnClickListener {
             logout()
         }
-
-        v.btnBantuanProfile.setOnClickListener { startActivity(Intent(context,BantuanActivity::class.java)) }
 
     }
 

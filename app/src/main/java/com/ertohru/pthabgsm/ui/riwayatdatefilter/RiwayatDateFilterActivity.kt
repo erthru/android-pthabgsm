@@ -86,6 +86,7 @@ class RiwayatDateFilterActivity : AppCompatActivity() {
 
         Log.d("DATE_FROM_INTENT",dateB+" "+dateA)
 
+        pbLoadingNextRDF.visibility = View.GONE
         rvRDF.adapter = null
         loadData()
 

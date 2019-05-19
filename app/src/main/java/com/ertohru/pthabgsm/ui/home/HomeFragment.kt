@@ -77,6 +77,7 @@ class HomeFragment : Fragment() {
 
                         v.mainContentHome.visibility = View.VISIBLE
                         v.tvDoneHome.text = "Servis Selesai: "+response.body()?.report_user?.servis_selesai?.toString()
+                        v.tvDeclineHome.text = "Servis Ditolak: "+response.body()?.report_user?.servis_ditolak?.toString()
                         v.tvOngoingHome.text = "Pesanan Berjalan: "+response.body()?.report_user?.servis_berjalan?.toString()
                         v.tvPesananTodayHome.text = "Pesanan Hari Ini: "+response.body()?.report_user?.today_pesanan?.toString()
                         v.tvTotalPesananHome.text = "Total Servis: "+response.body()?.report_user?.total_pesanan?.toString()

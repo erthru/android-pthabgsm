@@ -110,24 +110,6 @@
                     android:clickable="true"
                     android:layout_height="wrap_content" android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp" android:layout_marginTop="10dp"
-                    android:layout_marginBottom="2dp" android:id="@+id/btnBantuanProfile">
-                <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" android:padding="16dp">
-                    <TextView
-                            android:text="BANTUAN"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="18sp" android:textStyle="bold"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:layout_height="wrap_content" android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp" android:layout_marginTop="10dp"
                     android:layout_marginBottom="2dp" android:id="@+id/btnLogoutProfile">
                 <LinearLayout
                         android:orientation="vertical"

@@ -3,6 +3,7 @@ package com.ertohru.pthabgsm.ui.signup
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ertohru.pthabgsm.R
 import com.ertohru.pthabgsm.api.Client
@@ -24,7 +25,13 @@ class SignupActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         btnMasukSignup.setOnClickListener { startActivity(Intent(this,LoginActivity::class.java)) }
-        btnSignup.setOnClickListener { signUp() }
+        btnSignup.setOnClickListener {
+            if(edPasswordSignup.text.toString() != edPasswordReSignup.text.toString()){
+                Toasty.error(this,"Password tidak sama",Toasty.LENGTH_SHORT).show()
+            }else{
+                signUp()
+            }
+        }
 
     }
 

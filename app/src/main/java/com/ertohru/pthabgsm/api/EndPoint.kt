@@ -105,4 +105,9 @@ interface EndPoint{
         @Field("user_id")userId:Int
     ) : Call<RemoveUserTokenResponse>
 
+    @GET("app.php?mod=booking_ditolak")
+    fun bookingDitolak(
+        @Query("booking_id")bookingId:Int
+    ) : Call<BookingDitolakResponse>
+
 }

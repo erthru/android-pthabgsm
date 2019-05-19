@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ertohru.pthabgsm.R
 import com.ertohru.pthabgsm.api.Client
 import com.ertohru.pthabgsm.api.Support
+import com.ertohru.pthabgsm.api.response.BookingDitolakResponse
 import com.ertohru.pthabgsm.api.response.DaftarBookingStatusResponse
 import com.ertohru.pthabgsm.ui.viewservispart.ViewServisPartActivity
 import com.ertohru.pthabgsm.utils.StringUtils
@@ -80,7 +81,8 @@ class PesananDetailActivity : AppCompatActivity() {
             tvKeteranganDetailPD.text = "* Pesanan servis anda telah selesai. silahkan ambil kembali mobil anda di "+i.getStringExtra("dealer_alamat")+"Dengan membayar sejumlah total yang telah ditentukan. tap tombol di bawah untuk melihat detail."
             btnViewPartPD.visibility = View.VISIBLE
         }else if(lastStatus == "DITOLAK") {
-            tvKeteranganDetailPD.text = "* Pesanan servis anda ditolak. Cek menu bantuan untuk alasan penolakan"
+            tvKeteranganDetailPD.text = "* Memuat alasan ...."
+            loadBookingDitolak()
         }
 
         btnViewPartPD.setOnClickListener {
@@ -125,6 +127,36 @@ class PesananDetailActivity : AppCompatActivity() {
                         val adapter = StatusPesananDetailRecyclerView(applicationContext,response.body()?.booking_status)
                         adapter.notifyDataSetChanged()
                         rvStatusPD.adapter = adapter
+
+                    }
+
+                }
+
+            })
+
+    }
+
+    private fun loadBookingDitolak(){
+
+
+        Client().prepare(Support.API_PTHABGSM).bookingDitolak(bookingId!!)
+
+            .enqueue(object : retrofit2.Callback<BookingDitolakResponse>{
+                override fun onFailure(call: Call<BookingDitolakResponse>, t: Throwable) {
+                    Log.d("ONFAILURE", t.toString())
+                    pbStatusPD.visibility = View.GONE
+                    Toasty.error(applicationContext,"Koneksi internet gagal.",Toasty.LENGTH_SHORT).show()
+                    finish()
+                }
+
+                override fun onResponse(
+                    call: Call<BookingDitolakResponse>,
+                    response: Response<BookingDitolakResponse>
+                ) {
+
+                    if(response.isSuccessful){
+
+                        tvKeteranganDetailPD.text = "* Booking anda ditolak. \nAlasan: "+response?.body()?.pesan
 
                     }
 

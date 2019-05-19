@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.ertohru.pthabgsm.R
 import com.ertohru.pthabgsm.api.model.DataBookingUserDaftarBookingUserResponse
@@ -41,6 +42,13 @@ class RiwayatDateFilterRecyclerViewAdapter(val context:Context, val data:ArrayLi
             v.tvDealerLRBURDF.text = entity.dealer_nama
             v.tvJenisLRBURDF.text = "Jenis Servis: "+entity.booking_jenis_servis
             v.tvBookingIdLRBURDF.text = "No. Invoice: #"+entity.booking_id.toString()
+            v.tvStatusLRBURDF.text = entity.last_status?.toLowerCase()
+
+            if(entity.last_status == "SELESAI"){
+                v.layoutStatusLRBURDF.setBackgroundColor(ContextCompat.getColor(context,R.color.colorSuccess))
+            }else{
+                v.layoutStatusLRBURDF.setBackgroundColor(ContextCompat.getColor(context,R.color.colorError))
+            }
 
             v.layoutLRBURDF.setOnClickListener {
 

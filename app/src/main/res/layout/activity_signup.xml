@@ -83,6 +83,18 @@
                 android:layout_marginEnd="40dp" app:layout_constraintHorizontal_bias="0.0"
                 android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/edEmailSignup"
                 android:inputType="textPassword"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/edPasswordReSignup" android:layout_weight="1"
+                android:hint="Ulangi Password" android:drawableLeft="@drawable/ic_vpn_key_grey_24dp"
+                android:drawablePadding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="40dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="40dp" app:layout_constraintHorizontal_bias="0.0"
+                android:inputType="textPassword" app:layout_constraintTop_toBottomOf="@+id/edPasswordSignup"
+                android:layout_marginTop="8dp"/>
         <Button
                 android:text="REGISTER"
                 android:layout_width="0dp"
@@ -91,7 +103,8 @@
                 android:textColor="@android:color/white"
                 android:layout_marginStart="40dp" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginEnd="40dp" app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edPasswordSignup" android:layout_marginTop="14dp"/>
+                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/edPasswordReSignup"/>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="0dp"
