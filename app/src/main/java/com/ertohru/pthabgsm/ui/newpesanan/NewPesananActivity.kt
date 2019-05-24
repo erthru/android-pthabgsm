@@ -36,10 +36,12 @@ class NewPesananActivity : AppCompatActivity() {
 
         rgJenisNP.setOnCheckedChangeListener { _, i ->
             when(i){
-                R.id.radioBodyNP -> jenis = "BODY"
-                R.id.radioGRNP -> jenis = "GR"
-                R.id.radioSBINP -> jenis = "SBI"
-                R.id.radioSBENP -> jenis = "SBE"
+               R.id.radioPDSINP -> jenis = "PDS/I"
+               R.id.radioSBINP -> jenis = "SBI"
+               R.id.radioSBENP -> jenis = "SBE"
+               R.id.radioTWCNP -> jenis = "TWC"
+               R.id.radioRTJNP -> jenis = "RTJ"
+               R.id.radioGPNP -> jenis = "GR"
             }
         }
 

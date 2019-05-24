@@ -10,24 +10,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView15" android:textSize="18sp"
             android:textStyle="bold"/>
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edNamaDUP" android:hint="Nama Lengkap" android:layout_marginTop="5dp"/>
-    <EditText
+            android:layout_height="match_parent">
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/edNamaDUP" android:hint="Nama Lengkap" android:layout_marginTop="5dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:ems="10"
-            android:id="@+id/edAlamatDUP" android:hint="Alamat" android:gravity="top"
-            android:inputType="textMultiLine"/>
-    <EditText
+            android:layout_height="match_parent">
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:ems="10"
+                android:id="@+id/edAlamatDUP" android:hint="Alamat" android:gravity="top"
+                android:inputType="textMultiLine"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edNohpDUP" android:hint="No. Hp"/>
+            android:layout_height="match_parent">
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/edNohpDUP" android:hint="No. Hp"/>
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
             android:text="PERBARUI"
             android:layout_width="match_parent"

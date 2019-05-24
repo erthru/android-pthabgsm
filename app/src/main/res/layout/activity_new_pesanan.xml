@@ -63,17 +63,10 @@
                                 android:layout_marginTop="4dp"
                                 android:id="@+id/rgJenisNP">
                             <RadioButton
-                                    android:text="Body"
+                                    android:text="PDS/I"
                                     android:buttonTint="#808080"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" android:id="@+id/radioBodyNP"
-                                    android:layout_weight="1"
-                                    android:textColor="#808080"/>
-                            <RadioButton
-                                    android:text="GR (Servis Mesin Berkala)"
-                                    android:buttonTint="#808080"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" android:id="@+id/radioGRNP"
+                                    android:layout_height="wrap_content" android:id="@+id/radioPDSINP"
                                     android:layout_weight="1"
                                     android:textColor="#808080"/>
                             <RadioButton
@@ -84,45 +77,87 @@
                                     android:layout_weight="1"
                                     android:textColor="#808080"/>
                             <RadioButton
-                                    android:text="SBE (Servis Berkala External?)"
+                                    android:text="SBE (Servis Berkala External)"
                                     android:buttonTint="#808080"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content" android:id="@+id/radioSBENP"
                                     android:layout_weight="1"
                                     android:textColor="#808080"/>
+                            <RadioButton
+                                    android:text="TWC (Toyoya Waranty Claim)"
+                                    android:buttonTint="#808080"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" android:id="@+id/radioTWCNP"
+                                    android:layout_weight="1"
+                                    android:textColor="#808080"/>
+                            <RadioButton
+                                    android:text="RTJ (Return Job)"
+                                    android:buttonTint="#808080"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" android:id="@+id/radioRTJNP"
+                                    android:layout_weight="1"
+                                    android:textColor="#808080"/>
+                            <RadioButton
+                                    android:text="GR (General Repair)"
+                                    android:buttonTint="#808080"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" android:id="@+id/radioGPNP"
+                                    android:layout_weight="1"
+                                    android:textColor="#808080"/>
                         </RadioGroup>
-                        <EditText
+                        <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:id="@+id/edModelKendaraanNP" android:layout_marginTop="8dp"
-                                android:hint="Model Kendaraan"
-                                android:gravity="top" android:inputType="textPersonName"/>
-                        <EditText
+                                android:layout_height="match_parent">
+                            <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:id="@+id/edModelKendaraanNP" android:layout_marginTop="8dp"
+                                    android:hint="Model Kendaraan"
+                                    android:gravity="top" android:inputType="textPersonName"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:id="@+id/edVincodePN" android:layout_marginTop="8dp" android:hint="Vincode"
-                                android:gravity="top" android:inputType="textPersonName"/>
-                        <EditText
+                                android:layout_height="match_parent">
+                            <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:id="@+id/edVincodePN" android:layout_marginTop="8dp" android:hint="Vincode"
+                                    android:gravity="top" android:inputType="textPersonName"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:id="@+id/edKMPN" android:layout_marginTop="8dp" android:hint="KM"
-                                android:gravity="top" android:inputType="textPersonName"/>
-                        <EditText
+                                android:layout_height="match_parent">
+                            <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:id="@+id/edKMPN" android:layout_marginTop="8dp" android:hint="KM"
+                                    android:gravity="top" android:inputType="textPersonName"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:id="@+id/edNoPolisiPN" android:layout_marginTop="8dp" android:hint="No Polisi"
-                                android:gravity="top" android:inputType="textPersonName"/>
-                        <EditText
+                                android:layout_height="match_parent">
+                            <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:id="@+id/edNoPolisiPN" android:layout_marginTop="8dp"
+                                    android:hint="No Polisi"
+                                    android:gravity="top" android:inputType="textPersonName"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                android:ems="10"
-                                android:id="@+id/edKeteranganNP" android:layout_marginTop="8dp"
-                                android:hint="Keterangan"
-                                android:gravity="top" android:inputType="textMultiLine"/>
+                                android:layout_height="match_parent">
+                            <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:ems="10"
+                                    android:id="@+id/edKeteranganNP" android:layout_marginTop="8dp"
+                                    android:hint="Keterangan"
+                                    android:gravity="top" android:inputType="textMultiLine"/>
+                        </com.google.android.material.textfield.TextInputLayout>
                         <Button
                                 android:text="BUAT PESANAN"
                                 android:layout_width="match_parent"

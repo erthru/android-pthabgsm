@@ -11,9 +11,9 @@
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="42dp" android:layout_weight="1">
+                android:layout_height="wrap_content" android:layout_weight="1">
             <TextView
-                    android:text="Item Name"
+                    android:text="awf auwfh oawhf oauwhf uahwfi uhawiuf wufiuawhff awfgiawgiawjgawg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/tvNameLVSP" android:textSize="18sp"
                     android:layout_weight="1"/>
