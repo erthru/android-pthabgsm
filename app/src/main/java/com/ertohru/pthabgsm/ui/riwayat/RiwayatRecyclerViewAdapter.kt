@@ -57,6 +57,7 @@ class RiwayatRecyclerViewAdapter(val context:Context, val data:ArrayList<Riwayat
                 i.putExtra("booking_vincode",entity?.booking_vincode)
                 i.putExtra("booking_km",entity?.booking_km)
                 i.putExtra("booking_no_polisi",entity?.booking_no_polisi)
+                i.putExtra("booking_jadwal_servis",entity?.booking_jadwal_servis)
                 i.putExtra("booking_keterangan",entity?.booking_keterangan)
                 i.putExtra("booking_biaya",entity?.booking_biaya)
                 i.putExtra("booking_created_at",entity?.booking_created_at)

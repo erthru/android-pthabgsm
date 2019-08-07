@@ -1,9 +1,13 @@
 package com.ertohru.pthabgsm.ui.newpesanan
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.customview.customView
 import com.ertohru.pthabgsm.R
 import com.ertohru.pthabgsm.api.Client
 import com.ertohru.pthabgsm.api.Support
@@ -15,6 +19,7 @@ import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_new_pesanan.*
 import retrofit2.Call
 import retrofit2.Response
+import java.util.*
 
 class NewPesananActivity : AppCompatActivity() {
 
@@ -55,6 +60,42 @@ class NewPesananActivity : AppCompatActivity() {
 
         }
 
+        tvInformasiJenisServisNP.setOnClickListener {
+
+            val dialogView = layoutInflater.inflate(R.layout.dialog_lihat_informasi_new_pesanan,null,false)
+            val dialog = MaterialDialog(this)
+            dialog.setTitle("Jenis Servis")
+            dialog.customView(null, dialogView, false, true)
+            dialog.cancelable(true)
+            dialog.positiveButton(text = "TUTUP")
+            dialog.show()
+
+        }
+
+        edJadwalServisNP.setOnClickListener {
+
+            val calendar = Calendar.getInstance()
+            DatePickerDialog(
+                this,
+                DatePickerDialog.OnDateSetListener { datePicker, y, m, d ->
+                    val monthFix = (m+1).toString()
+
+                    val year = y.toString()
+                    val month = if (monthFix.length == 1) "0$monthFix" else "$monthFix"
+                    val day = if (d.toString().length == 1) "0$d" else "$d"
+
+                    val date = "$year-$month-$day"
+
+                    Log.d("SELECTED_DATE",date)
+                    edJadwalServisNP.setText(date)
+                },
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+            ).show()
+
+        }
+
     }
 
     private fun createPesanan(jenis:String){
@@ -71,6 +112,7 @@ class NewPesananActivity : AppCompatActivity() {
             edVincodePN.text.toString(),
             edKMPN.text.toString(),
             edNoPolisiPN.text.toString(),
+            edJadwalServisNP.text.toString(),
             edKeteranganNP.text.toString())
 
             .enqueue(object : retrofit2.Callback<StartBookingResponse>{
@@ -85,10 +127,15 @@ class NewPesananActivity : AppCompatActivity() {
 
                     if(response.isSuccessful){
 
-                        loading.dismiss()
-                        finish()
-                        startActivity(Intent(applicationContext,MainActivity::class.java).putExtra("TARGET","SERVIS"))
-                        Toasty.success(applicationContext,response.body()?.pesan!!,Toasty.LENGTH_SHORT).show()
+                        if(response.body()?.error!!){
+                            loading.dismiss()
+                            Toasty.error(applicationContext,response.body()?.pesan!!, Toast.LENGTH_SHORT).show()
+                        }else{
+                            loading.dismiss()
+                            finish()
+                            startActivity(Intent(applicationContext,MainActivity::class.java).putExtra("TARGET","SERVIS"))
+                            Toasty.success(applicationContext,response.body()?.pesan!!,Toasty.LENGTH_SHORT).show()
+                        }
 
                     }
 

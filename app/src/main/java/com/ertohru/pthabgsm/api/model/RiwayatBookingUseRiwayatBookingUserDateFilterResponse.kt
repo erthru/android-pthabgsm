@@ -8,6 +8,7 @@ data class  RiwayatBookingUseRiwayatBookingUserDateFilterResponse(
     var booking_vincode:String?,
     var booking_km:String?,
     var booking_no_polisi:String?,
+    var booking_jadwal_servis:String?,
     var booking_keterangan:String?,
     var booking_biaya:String?,
     var booking_created_at:String?,

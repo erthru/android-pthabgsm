@@ -127,7 +127,17 @@
                                 android:layout_height="wrap_content" android:id="@+id/tvKeteranganPD"
                                 android:textSize="18sp" android:layout_marginTop="-2dp"/>
                         <TextView
-                                android:text="Tgl"
+                                android:text="Rencana Jadwal Servis"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <TextView
+                                android:text="00-00-1990"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvJadwalServisPD" android:textSize="18sp"
+                                android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="Tgl Servis Dibuat"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:id="@+id/textView10"
                                 android:textStyle="bold" android:layout_marginTop="8dp"/>

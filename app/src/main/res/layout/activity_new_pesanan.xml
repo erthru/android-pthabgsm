@@ -51,11 +51,26 @@
                             android:orientation="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" android:padding="16dp">
-                        <TextView
-                                android:text="Jenis Servis:"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" android:id="@+id/textView3"
-                        />
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                            <TextView
+                                    android:text="Jenis Servis:"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="10dp"
+                                    android:id="@+id/textView3"
+                                    android:layout_weight="1"
+                            />
+                            <TextView
+                                    android:text="LIHAT INFORMASI"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tvInformasiJenisServisNP"
+                                    android:textColor="@color/colorSuccess"
+                                    android:textStyle="bold"
+                                    android:layout_weight="0"
+                            />
+                        </LinearLayout>
                         <RadioGroup
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:orientation="vertical"
@@ -113,7 +128,7 @@
                                     android:layout_height="wrap_content"
                                     android:ems="10"
                                     android:id="@+id/edModelKendaraanNP" android:layout_marginTop="8dp"
-                                    android:hint="Model Kendaraan"
+                                    android:hint="Tahun Kendaraan"
                                     android:gravity="top" android:inputType="textPersonName"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
@@ -123,7 +138,8 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:ems="10"
-                                    android:id="@+id/edVincodePN" android:layout_marginTop="8dp" android:hint="Vincode"
+                                    android:id="@+id/edVincodePN" android:layout_marginTop="8dp"
+                                    android:hint="Nomor Rangka"
                                     android:gravity="top" android:inputType="textPersonName"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
@@ -145,6 +161,18 @@
                                     android:ems="10"
                                     android:id="@+id/edNoPolisiPN" android:layout_marginTop="8dp"
                                     android:hint="No Polisi"
+                                    android:gravity="top" android:inputType="textPersonName"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:id="@+id/edJadwalServisNP" android:layout_marginTop="8dp"
+                                    android:focusable="false"
+                                    android:hint="Tentukan Jadwal Servis"
                                     android:gravity="top" android:inputType="textPersonName"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
