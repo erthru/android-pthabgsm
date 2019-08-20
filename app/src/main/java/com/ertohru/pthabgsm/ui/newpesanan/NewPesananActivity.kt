@@ -63,12 +63,11 @@ class NewPesananActivity : AppCompatActivity() {
         tvInformasiJenisServisNP.setOnClickListener {
 
             val dialogView = layoutInflater.inflate(R.layout.dialog_lihat_informasi_new_pesanan,null,false)
-            val dialog = MaterialDialog(this)
-            dialog.setTitle("Jenis Servis")
-            dialog.customView(null, dialogView, false, true)
-            dialog.cancelable(true)
-            dialog.positiveButton(text = "TUTUP")
-            dialog.show()
+
+            MaterialDialog(this).show {
+                customView(null, dialogView, true,true)
+                positiveButton(text = "TUTUP")
+            }
 
         }
 

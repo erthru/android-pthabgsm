@@ -78,21 +78,21 @@
                                 android:layout_marginTop="4dp"
                                 android:id="@+id/rgJenisNP">
                             <RadioButton
-                                    android:text="PDS/I"
+                                    android:text="PDS/I (Pre Delivery Service)"
                                     android:buttonTint="#808080"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content" android:id="@+id/radioPDSINP"
                                     android:layout_weight="1"
                                     android:textColor="#808080"/>
                             <RadioButton
-                                    android:text="SBI (Servis Berkala Internal)"
+                                    android:text="SBI (Service Berkala Internal)"
                                     android:buttonTint="#808080"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content" android:id="@+id/radioSBINP"
                                     android:layout_weight="1"
                                     android:textColor="#808080"/>
                             <RadioButton
-                                    android:text="SBE (Servis Berkala External)"
+                                    android:text="SBE (Service Berkala External)"
                                     android:buttonTint="#808080"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content" android:id="@+id/radioSBENP"
