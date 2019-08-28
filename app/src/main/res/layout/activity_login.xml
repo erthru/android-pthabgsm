@@ -83,4 +83,10 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+            android:text="LOGIN TEKNISI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnLoginTeknisiLogin" android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp" android:textStyle="bold" android:textColor="@color/colorAccent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

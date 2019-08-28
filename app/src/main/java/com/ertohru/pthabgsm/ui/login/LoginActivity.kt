@@ -8,6 +8,7 @@ import com.ertohru.pthabgsm.R
 import com.ertohru.pthabgsm.api.Client
 import com.ertohru.pthabgsm.api.Support
 import com.ertohru.pthabgsm.api.response.LoginResponse
+import com.ertohru.pthabgsm.ui.loginteknisi.LoginTeknisiActivity
 import com.ertohru.pthabgsm.ui.main.MainActivity
 import com.ertohru.pthabgsm.ui.signup.SignupActivity
 import com.ertohru.pthabgsm.utils.Loading
@@ -32,6 +33,8 @@ class LoginActivity : AppCompatActivity() {
 
         btnDaftarLogin.setOnClickListener { startActivity(Intent(this,SignupActivity::class.java)) }
         btnLogin.setOnClickListener { auth() }
+
+        btnLoginTeknisiLogin.setOnClickListener { startActivity(Intent(this,LoginTeknisiActivity::class.java)) }
 
     }
 

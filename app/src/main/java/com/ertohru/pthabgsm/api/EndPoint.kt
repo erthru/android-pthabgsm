@@ -111,4 +111,18 @@ interface EndPoint{
         @Query("booking_id")bookingId:Int
     ) : Call<BookingDitolakResponse>
 
+    @FormUrlEncoded
+    @POST("App.php?mod=login_teknisi")
+    fun loginTeknisi(
+        @Field("email")email: String,
+        @Field("password")password: String
+    ) : Call<LoginTeknisiResponse>
+
+    @FormUrlEncoded
+    @POST("App.php?mod=update_password_teknisi")
+    fun updatePasswordTeknisi(
+        @Field("id")id: String,
+        @Field("password")password: String
+    ) : Call<UpdatePasswordTeknisiResponse>
+
 }

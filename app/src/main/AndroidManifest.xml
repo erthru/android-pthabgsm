@@ -13,6 +13,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ui.teknisimain.TeknisiMainActivity">
+        </activity>
+        <activity android:name=".ui.loginteknisi.LoginTeknisiActivity">
+        </activity>
         <activity android:name=".ui.riwayatdatefilter.RiwayatDateFilterActivity">
         </activity>
         <activity android:name=".ui.viewservispart.ViewServisPartActivity">
@@ -35,26 +39,21 @@
             </intent-filter>
         </activity>
 
-
         <service android:name=".utils.fcm.FCMMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
         <meta-data
                 android:name="com.google.firebase.messaging.default_notification_icon"
-                android:resource="@drawable/ic_settings_red_24dp" />
-
+                android:resource="@drawable/ic_settings_red_24dp"/>
         <meta-data
                 android:name="com.google.firebase.messaging.default_notification_color"
-                android:resource="@color/colorAccent" />
-
+                android:resource="@color/colorAccent"/>
         <meta-data
                 android:name="com.google.firebase.messaging.default_notification_channel_id"
-                android:value="fcm_pthabgsm" />
-
+                android:value="fcm_pthabgsm"/>
     </application>
-
 
 </manifest>
