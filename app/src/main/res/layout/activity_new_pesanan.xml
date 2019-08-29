@@ -128,7 +128,7 @@
                                     android:layout_height="wrap_content"
                                     android:ems="10"
                                     android:id="@+id/edModelKendaraanNP" android:layout_marginTop="8dp"
-                                    android:hint="Tahun Kendaraan"
+                                    android:hint="Tipe Kendaraan"
                                     android:gravity="top" android:inputType="textPersonName"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout

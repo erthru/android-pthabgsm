@@ -1,5 +1,6 @@
 package com.ertohru.pthabgsm.api
 
+import com.ertohru.pthabgsm.api.model.ListBookingTeknisiResponse
 import com.ertohru.pthabgsm.api.response.*
 import retrofit2.Call
 import retrofit2.http.*
@@ -124,5 +125,10 @@ interface EndPoint{
         @Field("id")id: String,
         @Field("password")password: String
     ) : Call<UpdatePasswordTeknisiResponse>
+
+    @GET("App.php?mod=list_booking_for_teknisi")
+    fun listBookingForteknisi(
+        @Query("page")page: Int
+    ) : Call<ListBookingTeknisiResponse>
 
 }

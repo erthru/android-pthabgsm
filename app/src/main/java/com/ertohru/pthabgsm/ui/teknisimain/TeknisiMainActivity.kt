@@ -6,13 +6,8 @@ import android.os.Bundle
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import com.ertohru.pthabgsm.R
-import com.ertohru.pthabgsm.ui.home.HomeFragment
-import com.ertohru.pthabgsm.ui.profile.ProfileFragment
-import com.ertohru.pthabgsm.ui.riwayat.RiwayatFragment
-import com.ertohru.pthabgsm.ui.servis.ServisFragment
 import com.ertohru.pthabgsm.ui.teknisiprofil.TeknisiProfilFragment
-import com.ertohru.pthabgsm.ui.teknisiservismenunggu.TeknisiServisMenungguFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import com.ertohru.pthabgsm.ui.teknisiservispengerjaan.TeknisiServisPengerjaanFragment
 import kotlinx.android.synthetic.main.activity_teknisi_main.*
 
 class TeknisiMainActivity : AppCompatActivity() {
@@ -23,11 +18,9 @@ class TeknisiMainActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val menunggu = AHBottomNavigationItem("Menunggu",R.drawable.ic_access_time_gray_24dp)
         val pengerjaan = AHBottomNavigationItem("Pengerjaan",R.drawable.ic_library_books_grey_24dp)
         val profil = AHBottomNavigationItem("Profil",R.drawable.ic_person_grey_24dp)
 
-        botnavTM.addItem(menunggu)
         botnavTM.addItem(pengerjaan)
         botnavTM.addItem(profil)
 
@@ -37,7 +30,7 @@ class TeknisiMainActivity : AppCompatActivity() {
         botnavTM.titleState = AHBottomNavigation.TitleState.ALWAYS_SHOW
 
         val fm = supportFragmentManager
-        fm.beginTransaction().replace(R.id.flTM, TeknisiServisMenungguFragment()).commit()
+        fm.beginTransaction().replace(R.id.flTM, TeknisiServisPengerjaanFragment()).commit()
 
         botnavTM.setOnTabSelectedListener(object : AHBottomNavigation.OnTabSelectedListener{
 
@@ -45,9 +38,8 @@ class TeknisiMainActivity : AppCompatActivity() {
 
                 when(position){
 
-                    0 -> fm.beginTransaction().replace(R.id.flTM, TeknisiServisMenungguFragment()).commit()
-                    1 -> fm.beginTransaction().replace(R.id.flTM, TeknisiServisMenungguFragment()).commit()
-                    2 -> fm.beginTransaction().replace(R.id.flTM, TeknisiProfilFragment()).commit()
+                    0 -> fm.beginTransaction().replace(R.id.flTM, TeknisiServisPengerjaanFragment()).commit()
+                    1 -> fm.beginTransaction().replace(R.id.flTM, TeknisiProfilFragment()).commit()
 
                 }
 
