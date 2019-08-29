@@ -9,6 +9,7 @@ data class ListBookingTeknisiResponse(
 data class Booking(
     val booking_id: String,
     val booking_jenis_servis: String,
+    val booking_model_kendaraan: String,
     val booking_vincode: String,
     val booking_km: String,
     val booking_no_polisi: String,

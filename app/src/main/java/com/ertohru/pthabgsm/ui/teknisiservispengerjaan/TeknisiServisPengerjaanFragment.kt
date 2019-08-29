@@ -61,9 +61,17 @@ class TeknisiServisPengerjaanFragment : Fragment() {
             }
         })
 
-        loadBooking()
-
         return v
+    }
+
+    override fun onResume() {
+        super.onResume()
+        page = 0
+        allDataLoaded = false
+        bookings.clear()
+
+        v.rvFTSP.adapter = rvAdapter
+        loadBooking()
     }
 
     private fun loadBooking(){

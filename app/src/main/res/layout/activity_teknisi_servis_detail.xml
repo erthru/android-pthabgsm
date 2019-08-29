@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.teknisiservisdetail.TeknisiServisDetailActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp" android:paddingLeft="16dp" android:paddingRight="16dp"
+        >
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:gravity="center_vertical">
+                <ImageView
+                        android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp" android:id="@+id/btnBackTSD" android:layout_weight="0"
+                        android:scaleType="fitXY" android:layout_marginTop="2dp" android:layout_marginLeft="-8dp"/>
+                <TextView
+                        android:text="Servis Detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView2"
+                        android:layout_gravity="center_vertical" android:textSize="19sp"
+                        android:textColor="@color/colorTitle"
+                        android:fontFamily="sans-serif-condensed-light" android:textStyle="bold"/>
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="2dp"
+                     android:background="@drawable/toolbar_shadow">
+        </FrameLayout>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:layout_marginTop="12dp"
+                        android:layout_marginRight="12dp" android:layout_marginLeft="12dp"
+                        android:layout_marginBottom="2dp">
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:padding="16dp">
+                        <TextView
+                                android:text="Pesanan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:textSize="18sp" android:textColor="@color/colorAccent"
+                        />
+                        <TextView
+                                android:text="Invoice Id"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView7"
+                                android:textStyle="bold" android:layout_marginTop="4dp"/>
+                        <TextView
+                                android:text="#0"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvInvoiceTSD"
+                                android:textSize="18sp" android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="Jenis Servis"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView8"
+                                android:layout_marginTop="8dp" android:textStyle="bold"/>
+                        <TextView
+                                android:text="BODY"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvJenisTSD"
+                                android:textSize="18sp" android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="Tipe Kendaraan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView21"
+                                android:layout_marginTop="8dp" android:textStyle="bold"/>
+                        <TextView
+                                android:text="Model Kenda"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvModelKendaraanTSD"
+                                android:textSize="18sp" android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="Vincode"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView20"
+                                android:layout_marginTop="8dp" android:textStyle="bold"/>
+                        <TextView
+                                android:text="Kode"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvVincodeTSD"
+                                android:textSize="18sp" android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="KM"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView19"
+                                android:layout_marginTop="8dp" android:textStyle="bold"/>
+                        <TextView
+                                android:text="14"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvKMTSD"
+                                android:textSize="18sp" android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="No Polisi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView17"
+                                android:layout_marginTop="8dp" android:textStyle="bold"/>
+                        <TextView
+                                android:text="DM 0000 AB"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvNoPolisiTSD"
+                                android:textSize="18sp" android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="Keterangan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView9"
+                                android:layout_marginTop="8dp" android:textSize="14sp" android:textStyle="bold"/>
+                        <TextView
+                                android:text="-"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvKeteranganTSD"
+                                android:textSize="18sp" android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="Rencana Jadwal Servis"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <TextView
+                                android:text="00-00-1990"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvJadwalServisTSD"
+                                android:textSize="18sp"
+                                android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="Tgl Servis Dibuat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView10"
+                                android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <TextView
+                                android:text="00:00:00 | 00-00-1990"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvTglTSD" android:textSize="18sp"
+                                android:layout_marginTop="-2dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:layout_marginTop="10dp"
+                        android:layout_marginRight="12dp" android:layout_marginLeft="12dp"
+                        android:layout_marginBottom="2dp">
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:padding="16dp">
+                        <TextView
+                                android:text="Data Pengguna"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:textSize="18sp" android:textColor="@color/colorAccent"
+                        />
+                        <TextView
+                                android:text="Nama"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView11"
+                                android:layout_marginTop="4dp" android:textStyle="bold"/>
+                        <TextView
+                                android:text="Puput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvNamaTSD"
+                                android:textSize="18sp" android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="Alamat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView12"
+                                android:textStyle="bold" android:layout_marginTop="8dp"/>
+                        <TextView
+                                android:text="asdasd asd asd a as "
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvAlamatTSD"
+                                android:textSize="18sp" android:layout_marginTop="-2dp"/>
+                        <TextView
+                                android:text="Dealer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/textView13"
+                                android:textStyle="bold" android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:layout_marginTop="10dp"
+                        android:layout_marginRight="12dp" android:layout_marginLeft="12dp"
+                        android:layout_marginBottom="2dp">
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:padding="16dp">
+                        <TextView
+                                android:text="Keterangan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:textSize="18sp" android:textColor="@color/colorAccent"
+                        />
+                        <TextView
+                                android:text="* Keterangan pesanan disini"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/tvKeteranganDetailTSD"/>
+                        <Button
+                                android:text="SET SPAREPART"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/btnViewSparePartTSD"
+                                android:textColor="@android:color/white" android:textStyle="bold"
+                                android:background="@color/successColor" android:layout_marginTop="10dp"
+                        />
+                        <Button
+                                android:text="TOLAK PESANAN SERVIS"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:id="@+id/btnTolakTSD"
+                                android:textColor="@android:color/white" android:textStyle="bold"
+                                android:background="@color/colorAccent" android:layout_marginTop="10dp"
+                        />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

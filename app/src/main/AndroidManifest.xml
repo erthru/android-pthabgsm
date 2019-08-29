@@ -13,6 +13,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ui.teknisiservisdetail.TeknisiServisDetailActivity">
+        </activity>
         <activity android:name=".ui.teknisimain.TeknisiMainActivity">
         </activity>
         <activity android:name=".ui.loginteknisi.LoginTeknisiActivity">
