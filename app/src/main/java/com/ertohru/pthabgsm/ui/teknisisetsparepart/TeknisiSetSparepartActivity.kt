@@ -53,6 +53,7 @@ class TeknisiSetSparepartActivity : AppCompatActivity() {
             btnPilihTSS.visibility = View.VISIBLE
             btnResetTSS.visibility = View.GONE
             cardProsesTSS.visibility = View.GONE
+            SELECTED_SPAREPART.clear()
         }
 
         btnJumlah.setOnClickListener {
