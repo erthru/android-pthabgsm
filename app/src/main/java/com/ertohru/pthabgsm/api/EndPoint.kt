@@ -1,5 +1,8 @@
 package com.ertohru.pthabgsm.api
 
+import com.ertohru.pthabgsm.api.model.AlasanDitolakResponse
+import com.ertohru.pthabgsm.api.model.DaftarBarangServisByJenisNonPagingResponse
+import com.ertohru.pthabgsm.api.model.DitolakBookingResponse
 import com.ertohru.pthabgsm.api.model.ListBookingTeknisiResponse
 import com.ertohru.pthabgsm.api.response.*
 import retrofit2.Call
@@ -130,5 +133,23 @@ interface EndPoint{
     fun listBookingForteknisi(
         @Query("page")page: Int
     ) : Call<ListBookingTeknisiResponse>
+
+    @FormUrlEncoded
+    @POST("App.php?mod=ditolak_booking")
+    fun ditolakBooking(
+        @Field("booking_id")bookingId: String
+    ) : Call<DitolakBookingResponse>
+
+    @FormUrlEncoded
+    @POST("App.php?mod=set_alasan_booking_ditolak")
+    fun setAlasanBookingDitolak(
+        @Field("booking_id")bookingId: String,
+        @Field("alasan")alasan: String
+    ) : Call<AlasanDitolakResponse>
+
+    @GET("App.php?mod=daftar_barang_servis_by_jenis_non_paging")
+    fun daftarBarangServisByJenisNonPaging(
+        @Query("jenis")jenis: String
+    ) : Call<DaftarBarangServisByJenisNonPagingResponse>
 
 }

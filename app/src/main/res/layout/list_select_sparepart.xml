@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:focusableInTouchMode="true"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" android:paddingTop="8dp" android:paddingBottom="2dp">
+
+    <TextView
+            android:text="Nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvNamaLSS" android:textSize="16dp"
+            android:textStyle="bold"/>
+    <TextView
+            android:text="Rp.0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvHargaLSS" android:textColor="@color/colorAccent"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" android:layout_marginTop="10dp">
+        <Button
+                android:text="-"
+                android:layout_width="50dp"
+                android:layout_height="40dp" android:id="@+id/btnKurangLSS" android:layout_weight="1"/>
+        <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/tvJumlahLSS" android:layout_weight="0"
+                android:textStyle="bold" android:textSize="18dp" android:layout_marginLeft="8dp"/>
+        <Button
+                android:text="+"
+                android:layout_width="50dp"
+                android:layout_height="40dp" android:id="@+id/btnTambahLSS" android:layout_weight="1"
+                android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+</LinearLayout>

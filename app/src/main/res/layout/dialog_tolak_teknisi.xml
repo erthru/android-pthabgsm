@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:paddingLeft="24dp"
+              android:paddingRight="24dp"
+              android:layout_height="wrap_content">
+
+    <TextView
+            android:text="Tolak Pesanan ?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView36"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edAlasanDTT" android:hint="Tuliskan alasan"/>
+</LinearLayout>
