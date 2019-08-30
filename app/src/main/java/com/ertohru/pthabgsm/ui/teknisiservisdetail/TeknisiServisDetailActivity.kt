@@ -93,7 +93,10 @@ class TeknisiServisDetailActivity : AppCompatActivity() {
 
         btnViewSparePartTSD.setOnClickListener {
             if (btnViewSparePartTSD.text == "SET SPAREPART"){
-                startActivity(Intent(applicationContext, TeknisiSetSparepartActivity::class.java).putExtra("jenis", i.getStringExtra("booking_jenis_servis")))
+                startActivity(Intent(applicationContext, TeknisiSetSparepartActivity::class.java)
+                    .putExtra("jenis", i.getStringExtra("booking_jenis_servis"))
+                    .putExtra("booking_id",bookingId)
+                )
             }else{
 
             }

@@ -1,9 +1,6 @@
 package com.ertohru.pthabgsm.api
 
-import com.ertohru.pthabgsm.api.model.AlasanDitolakResponse
-import com.ertohru.pthabgsm.api.model.DaftarBarangServisByJenisNonPagingResponse
-import com.ertohru.pthabgsm.api.model.DitolakBookingResponse
-import com.ertohru.pthabgsm.api.model.ListBookingTeknisiResponse
+import com.ertohru.pthabgsm.api.model.*
 import com.ertohru.pthabgsm.api.response.*
 import retrofit2.Call
 import retrofit2.http.*
@@ -152,4 +149,11 @@ interface EndPoint{
         @Query("jenis")jenis: String
     ) : Call<DaftarBarangServisByJenisNonPagingResponse>
 
+    @FormUrlEncoded
+    @POST("App.php?mod=pemilihan_part_booking")
+    fun pemilihanPartBooking(
+        @Field("booking_id")bookingId: String,
+        @Field("barang_servis_id")barangServisId: String,
+        @Field("booking_biaya")bookingBiaya: String
+    ) : Call<PemilihanPartBookingReponse>
 }

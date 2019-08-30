@@ -1,5 +1,6 @@
 package com.ertohru.pthabgsm.ui.teknisisetsparepart
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,12 +27,28 @@ class TeknisiSetSparepartRecyclerView(val data: ArrayList<DaftarBarangServis>?) 
         holder.v.btnTambahLSS.setOnClickListener {
             jumlah += 1
             holder.v.tvJumlahLSS.text = jumlah.toString()
+            TeknisiSetSparepartActivity.SELECTED_SPAREPART.add(TeknisiSetSparepartActivity.SelectedSparepart(
+                data?.get(position)?.barang_servis_id!!,
+                data?.get(position)?.barang_servis_nama,
+                data?.get(position)?.barang_servis_harga
+            ))
+
+            Log.d("SELECTED_SPAREPART", "SELECTED: "+TeknisiSetSparepartActivity.SELECTED_SPAREPART.toString())
         }
 
         holder.v.btnKurangLSS.setOnClickListener {
             if (jumlah > 0){
                 jumlah -= 1
                 holder.v.tvJumlahLSS.text = jumlah.toString()
+
+                val selectedSparepart = TeknisiSetSparepartActivity.SelectedSparepart(
+                    data?.get(position)?.barang_servis_id!!,
+                    data?.get(position)?.barang_servis_nama,
+                    data?.get(position)?.barang_servis_harga
+                )
+
+                TeknisiSetSparepartActivity.SELECTED_SPAREPART.remove(selectedSparepart)
+                Log.d("SELECTED_SPAREPART", "SELECTED: "+TeknisiSetSparepartActivity.SELECTED_SPAREPART.toString())
             }
         }
 
