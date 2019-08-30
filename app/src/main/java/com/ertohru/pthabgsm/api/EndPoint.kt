@@ -156,4 +156,23 @@ interface EndPoint{
         @Field("barang_servis_id")barangServisId: String,
         @Field("booking_biaya")bookingBiaya: String
     ) : Call<PemilihanPartBookingReponse>
+
+    @FormUrlEncoded
+    @POST("App.php?mod=dalam_pengerjaan_booking")
+    fun dalamPengerjaanBooking(
+        @Field("booking_id")bookingId: String
+    ) : Call<DalamPengerjaanBookingResponse>
+
+    @FormUrlEncoded
+    @POST("App.php?mod=set_teknisi")
+    fun setTeknisi(
+        @Field("booking_id")bookingId: String,
+        @Field("teknisi_id")teknisiId: String
+    ) : Call<SetTeknisiReponse>
+
+    @FormUrlEncoded
+    @POST("App.php?mod=selesai_booking")
+    fun selesai(
+        @Field("booking_id")bookingId: String
+    ) : Call<SelesaiBookingResponse>
 }

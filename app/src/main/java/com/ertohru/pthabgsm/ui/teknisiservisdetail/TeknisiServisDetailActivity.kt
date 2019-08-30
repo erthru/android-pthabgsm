@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.afollestad.materialdialogs.DialogCallback
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
@@ -12,6 +13,8 @@ import com.ertohru.pthabgsm.api.Client
 import com.ertohru.pthabgsm.api.Support
 import com.ertohru.pthabgsm.api.model.AlasanDitolakResponse
 import com.ertohru.pthabgsm.api.model.DitolakBookingResponse
+import com.ertohru.pthabgsm.api.response.SelesaiBookingResponse
+import com.ertohru.pthabgsm.ui.teknisilihatsparepart.TeknisiLihatSparepartActivity
 import com.ertohru.pthabgsm.ui.teknisisetsparepart.TeknisiSetSparepartActivity
 import com.ertohru.pthabgsm.utils.Loading
 import com.ertohru.pthabgsm.utils.StringUtils
@@ -26,6 +29,7 @@ import retrofit2.Retrofit
 class TeknisiServisDetailActivity : AppCompatActivity() {
 
     lateinit var bookingId: String
+    private var bookingBiaya = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +52,8 @@ class TeknisiServisDetailActivity : AppCompatActivity() {
         tvNamaTSD.text = i.getStringExtra("user_nama_lengkap")
         tvAlamatTSD.text = i.getStringExtra("user_alamat")
 
+        bookingBiaya = i.getStringExtra("booking_biaya")
+
         val lastStatus = i.getStringExtra("last_status")
 
         when(lastStatus){
@@ -66,6 +72,7 @@ class TeknisiServisDetailActivity : AppCompatActivity() {
                 tvKeteranganDetailTSD.text = "Servis ini sedang dalam pengerjaan"
                 btnViewSparePartTSD.text = "LIHAT SPAREPART YANG TELAH DITENTUKAN"
                 btnTolakTSD.visibility = View.GONE
+                btnSetServisSelesaiTSD.visibility = View.VISIBLE
             }
         }
 
@@ -98,7 +105,30 @@ class TeknisiServisDetailActivity : AppCompatActivity() {
                     .putExtra("booking_id",bookingId)
                 )
             }else{
+                if (lastStatus == "MENUNGGU PERSETUJUAN"){
+                    startActivity(Intent(this,TeknisiLihatSparepartActivity::class.java)
+                        .putExtra("need_confirmation", "true")
+                        .putExtra("booking_id",bookingId)
+                        .putExtra("booking_biaya",bookingBiaya)
+                    )
+                }else{
+                    startActivity(Intent(this,TeknisiLihatSparepartActivity::class.java)
+                        .putExtra("need_confirmation", "false")
+                        .putExtra("booking_id",bookingId)
+                        .putExtra("booking_biaya",bookingBiaya)
+                    )
+                }
+            }
+        }
 
+        btnSetServisSelesaiTSD.setOnClickListener {
+            MaterialDialog(this).show {
+                title(text = "Konfirmasi")
+                message(text = "Set Pesanan Ini Telah Selesai ?")
+                positiveButton(text = "SELESAI") {
+                    selesai()
+                }
+                negativeButton(text = "BATAL")
             }
         }
 
@@ -156,5 +186,35 @@ class TeknisiServisDetailActivity : AppCompatActivity() {
                 }
 
             })
+    }
+
+    private fun selesai(){
+
+        val loading = Loading(this)
+        loading.show("Memproses...")
+
+        Client().prepare(Support.API_PTHABGSM).selesai(bookingId)
+            .enqueue(object: retrofit2.Callback<SelesaiBookingResponse>{
+                override fun onFailure(call: Call<SelesaiBookingResponse>, t: Throwable) {
+                    loading.dismiss()
+                    Toasty.error(applicationContext, "Koneksi gagal.", Toasty.LENGTH_SHORT).show()
+                }
+
+                override fun onResponse(
+                    call: Call<SelesaiBookingResponse>,
+                    response: Response<SelesaiBookingResponse>
+                ) {
+
+                    if (response.isSuccessful){
+                        loading.dismiss()
+                        Toasty.success(applicationContext, response?.body()?.pesan!!, Toasty.LENGTH_SHORT).show()
+
+                        finish()
+                    }
+
+                }
+
+            })
+
     }
 }

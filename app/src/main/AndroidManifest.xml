@@ -13,6 +13,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ui.teknisilihatsparepart.TeknisiLihatSparepartActivity">
+        </activity>
         <activity android:name=".ui.teknisisetsparepart.TeknisiSetSparepartActivity">
         </activity>
         <activity android:name=".ui.teknisiservisdetail.TeknisiServisDetailActivity">
