@@ -11,6 +11,8 @@ import com.ertohru.pthabgsm.api.response.LoginTeknisiResponse
 import com.ertohru.pthabgsm.ui.teknisimain.TeknisiMainActivity
 import com.ertohru.pthabgsm.utils.Loading
 import com.ertohru.pthabgsm.utils.sharedpref.SessionTeknisi
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.messaging.FirebaseMessaging
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login_teknisi.*
@@ -57,6 +59,9 @@ class LoginTeknisiActivity : AppCompatActivity() {
                         if(response.body()?.error!!){
                             Toasty.error(applicationContext, response.body()?.message!!, Toasty.LENGTH_LONG).show()
                         }else{
+
+                            FirebaseMessaging.getInstance().subscribeToTopic("teknisi")
+
                             SessionTeknisi(this@LoginTeknisiActivity).createSession(response.body()?.teknisi_id!!)
                             finish()
                             startActivity(Intent(applicationContext, TeknisiMainActivity::class.java))

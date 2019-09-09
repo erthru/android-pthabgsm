@@ -18,6 +18,7 @@ import com.ertohru.pthabgsm.api.response.UpdatePasswordTeknisiResponse
 import com.ertohru.pthabgsm.ui.login.LoginActivity
 import com.ertohru.pthabgsm.utils.Loading
 import com.ertohru.pthabgsm.utils.sharedpref.SessionTeknisi
+import com.google.firebase.messaging.FirebaseMessaging
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_teknisi_profil.*
 import kotlinx.android.synthetic.main.fragment_teknisi_profil.view.*
@@ -36,6 +37,7 @@ class TeknisiProfilFragment : Fragment() {
         v = inflater.inflate(R.layout.fragment_teknisi_profil, container, false)
 
         v.btnLogoutTPF.setOnClickListener {
+            FirebaseMessaging.getInstance().unsubscribeFromTopic("teknisi")
             SessionTeknisi(context!!).clearSession()
             activity?.finish()
             startActivity(Intent(context!!,LoginActivity::class.java))
